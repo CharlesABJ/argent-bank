@@ -1,0 +1,9 @@
+@each $color-name, $color in zip($color-name-list, $color-list) {
+  // Couleur de fond
+  @include apply-color("bg", $color-name, $color);
+  // Couleur de texte
+  @include apply-color("text", $color-name, $color);
+}
+
+body {
+}

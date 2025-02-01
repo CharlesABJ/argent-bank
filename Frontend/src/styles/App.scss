@@ -1,0 +1,63 @@
+// Fichier d'entrée des styles de l'application
+
+// (1) Importation des fichiers d'initialisation du projet
+@import "./init/_variables";
+@import "./init/_reset";
+@import "./init/_mixins";
+@import "./init/_animations";
+@import "./init/_global";
+
+// Header et Footer
+@import "../components/Header/_Header";
+@import "../components/Footer/_Footer";
+
+// (2) Importation des fichiers de composants
+// @import "./components/_buttons";
+
+// (3) Importation des fichiers de pages
+@import "../pages/Home/_Home";
+@import "../pages/SignIn/_SignIn";
+@import "../pages/User/_User";
+@import "../pages/NotFound/_NotFound";
+
+// Composants liés à la page :
+/*Home*/
+@import "../pages/Home/components/Hero/_Hero";
+@import "../pages/Home/components/Feature/_Feature";
+
+/*SignIn*/
+@import "../pages/SignIn/components/Form/_Form";
+
+/*User*/
+// @import "../pages/User/components/
+
+.Tuto {
+  height: 80vh;
+  background: red;
+  padding: $fourtypx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .parent {
+    background: green;
+    height: 80%;
+    width: 80%;
+    padding: $fourtypx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .enfant {
+      background: blue;
+      height: 25vh;
+      width: 50%;
+      padding: $fourtypx;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

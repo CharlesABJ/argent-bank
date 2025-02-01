@@ -1,0 +1,13 @@
+.Feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .feature-icon {
+    width: calc($hundredpx + $fiftypx + $twopx);
+    padding: $sixteenpx;
+    border: 10px solid #00bc77;
+    border-radius: 50%;
+  }
+}

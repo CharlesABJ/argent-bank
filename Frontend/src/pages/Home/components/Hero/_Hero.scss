@@ -1,0 +1,27 @@
+.Hero {
+  position: relative;
+  height: calc(4 * $hundredpx);
+
+  .hero-banner {
+    object-position: 0% 33%;
+  }
+
+  .hero-content {
+    position: absolute;
+    background: $color6;
+    top: $eightypx;
+    right: $eightypx;
+    width: calc(3 * $hundredpx);
+    padding: $thirty-twopx;
+
+    .hero-title {
+      display: flex;
+      flex-direction: column;
+      gap: $fivepx;
+    }
+
+    .hero-description {
+      margin-top: $fifteenpx;
+    }
+  }
+}

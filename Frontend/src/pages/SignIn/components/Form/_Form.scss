@@ -1,0 +1,42 @@
+.Form {
+  background: $color6;
+  color: $color2;
+  width: calc(3 * $hundredpx);
+  margin: 0 auto;
+  margin-top: calc(3 * $sixteenpx);
+  padding: $thirty-twopx;
+  h2 {
+    text-align: center;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $sixteenpx;
+    font-weight: $weight-bold;
+    input {
+      padding: 5px;
+      font-size: 1.2rem;
+      color: $color5;
+    }
+    &.remember {
+      width: max-content;
+      flex-direction: row;
+      align-items: center;
+      gap: $sevenpx;
+      font-weight: unset;
+      cursor: pointer;
+    }
+  }
+  button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    border-color: $color3;
+    background-color: $color3;
+    color: #fff;
+    text-decoration: underline;
+  }
+}

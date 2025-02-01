@@ -1,0 +1,24 @@
+@mixin header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Header {
+  @include header-flex;
+  & {
+    padding: $fivepx $twentypx;
+  }
+  .logo {
+    width: calc(2 * $hundredpx);
+  }
+
+  nav {
+    margin-right: $eightpx;
+    ul {
+      @include header-flex;
+      & {
+        gap: $fifteenpx;
+      }
+    }
+  }
+}
