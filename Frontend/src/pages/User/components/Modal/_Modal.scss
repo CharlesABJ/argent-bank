@@ -1,0 +1,91 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  .Modal {
+    position: relative;
+    background: $color6;
+    color: $color2;
+    margin: 0 auto;
+    padding: $twenty-fourpx;
+    border-radius: $tenpx;
+    display: flex;
+    flex-direction: column;
+    gap: $sixteenpx;
+    width: calc(4 * $hundredpx + $fourtypx);
+    max-width: 80%;
+    z-index: 3;
+    .title {
+      font-size: $twentypx;
+      font-weight: $weight-bold;
+    }
+    .description {
+      color: #71717a;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: $sevenpx;
+      font-weight: $weight-semibold;
+      input {
+        padding: $twelvepx;
+        border: $input-border;
+        border-radius: $sevenpx;
+        &:focus {
+          outline: $input-border;
+        }
+      }
+    }
+    .btn-zone {
+      display: flex;
+      justify-content: flex-end;
+      gap: $tenpx;
+      button {
+        padding: $eightpx $sixteenpx;
+        border: $input-border;
+        border-radius: $sevenpx;
+        cursor: pointer;
+        background: $color6;
+        transition: all 0.3s ease;
+        &:hover {
+          background: #f4f4f5;
+        }
+        &.save {
+          border-color: $color3;
+          background: $color3;
+          color: $color6;
+          &:hover {
+            border-color: darken($color: #00bc77, $amount: 5);
+            background: darken($color: #00bc77, $amount: 5);
+          }
+        }
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+    .close-modal {
+      position: absolute;
+      top: $twentypx;
+      right: $twentypx;
+      cursor: pointer;
+    }
+  }
+  &.hidden {
+    display: none;
+  }
+}

@@ -5,6 +5,10 @@
   margin: 0 auto;
   margin-top: calc(3 * $sixteenpx);
   padding: $thirty-twopx;
+  svg {
+    display: block;
+    margin: auto;
+  }
   h2 {
     text-align: center;
   }

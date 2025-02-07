@@ -1,0 +1,29 @@
+.Account {
+  background: $color6;
+  color: $color2;
+  width: 80%;
+  margin: 0 auto;
+  padding: $twenty-fourpx;
+
+  .account-name {
+  }
+  .container {
+    font-size: $sixteenpx;
+    .account-balance {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .balance {
+        font-size: $fourtypx;
+        font-weight: $weight-bold;
+      }
+      .view-transactions {
+        background: $color3;
+        color: $color6;
+        padding: $tenpx;
+      }
+    }
+    .balance-description {
+    }
+  }
+}

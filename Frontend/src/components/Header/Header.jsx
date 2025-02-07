@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUserCircle, faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/redux/auth/authSlice";
 
 function Header() {
   const { token } = useSelector((state) => state.auth);
+  const { userData } = useSelector((state) => state.user);
+
   const dispatch = useDispatch();
 
   return (
@@ -20,22 +22,28 @@ function Header() {
           {!token ? (
             <li className="sign-in">
               <NavLink to="/sign-in">
-                <FontAwesomeIcon icon={faUser} />
+                <FontAwesomeIcon icon={faUserCircle} />
                 Sign in
               </NavLink>
             </li>
           ) : (
-            <li className="sign-in logout">
-              <NavLink
-                onClick={() => {
-                  dispatch(logout());
-                }}
-                to="/"
-              >
-                <FontAwesomeIcon icon={faUser} />
-                Log out
-              </NavLink>
-            </li>
+            <>
+              <li>
+                <FontAwesomeIcon icon={faUserCircle} />
+                {userData?.firstName}
+              </li>
+              <li className="sign-in logout">
+                <NavLink
+                  onClick={() => {
+                    dispatch(logout());
+                  }}
+                  to="/"
+                >
+                  <FontAwesomeIcon icon={faSignOut} />
+                  Log out
+                </NavLink>
+              </li>
+            </>
           )}
         </ul>
       </nav>

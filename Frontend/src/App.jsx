@@ -1,7 +1,5 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./redux/store";
 
 import Layout from "./pages/Layout";
 
@@ -9,7 +7,6 @@ import Layout from "./pages/Layout";
 const Home = lazy(() => import("./pages/Home/Home"));
 const SignIn = lazy(() => import("./pages/SignIn/SignIn"));
 const User = lazy(() => import("./pages/User/User"));
-const Tuto = lazy(() => import("./pages/Tuto/Tuto"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 const router = createBrowserRouter([
@@ -47,14 +44,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "/tuto",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <Tuto />
-          </Suspense>
-        ),
-      },
+
       {
         path: "*",
         element: (
@@ -69,11 +59,7 @@ const router = createBrowserRouter([
 
 function App() {
   // router contains all pages routes and RouterProvider is used to display them
-  return (
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

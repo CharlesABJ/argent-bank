@@ -1,0 +1,24 @@
+.User {
+  background: $color2;
+  color: $color6;
+  padding-block: $thirty-twopx;
+
+  h2 {
+    text-align: center;
+    span {
+      display: block;
+    }
+  }
+  button {
+    display: block;
+    margin: $thirty-twopx auto;
+    background: $color3;
+    color: $color6;
+    padding: $tenpx;
+    border-color: $color3;
+  }
+  .accounts-zone {
+    display: grid;
+    gap: $thirty-twopx;
+  }
+}

@@ -1,6 +1,7 @@
 // Fichier d'entrée des styles de l'application
 
 // (1) Importation des fichiers d'initialisation du projet
+@import "./init/_fonts";
 @import "./init/_variables";
 @import "./init/_reset";
 @import "./init/_mixins";
@@ -30,34 +31,5 @@
 
 /*User*/
 // @import "../pages/User/components/
-
-.Tuto {
-  height: 80vh;
-  background: red;
-  padding: $fourtypx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .parent {
-    background: green;
-    height: 80%;
-    width: 80%;
-    padding: $fourtypx;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .enfant {
-      background: blue;
-      height: 25vh;
-      width: 50%;
-      padding: $fourtypx;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-}
+@import "../pages/User/components/Account/_Account";
+@import "../pages/User/components/Modal/_Modal";
