@@ -21,7 +21,15 @@ export const userApi = createApi({
         method: "POST",
       }),
     }),
+
+    updateUser: builder.mutation({
+      query: (credentials) => ({
+        url: `/user/profile`,
+        method: "PUT",
+        body: credentials,
+      }),
+    }),
   }),
 });
 
-export const { useGetUserMutation } = userApi;
+export const { useGetUserMutation, useUpdateUserMutation } = userApi;

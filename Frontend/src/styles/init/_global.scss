@@ -5,6 +5,9 @@
   @include apply-color("text", $color-name, $color);
 }
 
+body {
+  @include classic-body;
+}
 .error {
   color: red;
 }

@@ -686,7 +686,7 @@
 @mixin classic-body {
   @include classic-body-font-size;
   & {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: $font-base;
     font-weight: $weight-light;
     line-height: 20px;
     letter-spacing: 0;

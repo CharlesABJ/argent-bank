@@ -5,25 +5,28 @@ import { useNavigate } from "react-router-dom";
 import { setUser } from "../../redux/user/userSlice";
 import Account from "./components/Account/Account";
 import Modal from "./components/Modal/Modal";
+import { useUpdateUserMutation } from "@/redux/user/userApi";
 
 function User() {
-  const [getUser, { isLoading, error }] = useGetUserMutation();
-  const { token } = useSelector((state) => state.auth);
-  const { userData } = useSelector((state) => state.user) || {}; // ✅ Assure que userData n'est jamais undefined
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const { userData } = useSelector((state) => state.user) || {};
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [getUser, { isLoading, error }] = useGetUserMutation();
+  const [updateUser, { isLoading: isLoadingUpdate, error: errorUpdate }] =
+    useUpdateUserMutation();
+
+  const { token } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   // Fetch user data when component mounts
   useEffect(() => {
     if (!token) {
       navigate("/sign-in");
-      return null; // ✅ Stop execution if no token
+      return null;
     }
-
     getUser()
       .unwrap()
       .then((result) => {
@@ -33,7 +36,7 @@ function User() {
       .catch((err) => {
         console.error("Error retrieving user data:", err);
       });
-  }, [token, getUser, dispatch, navigate]);
+  }, []);
 
   // Update firstName & lastName when userData changes
   useEffect(() => {
@@ -51,9 +54,14 @@ function User() {
     setLastName(userData?.lastName || "");
   };
 
-  const handleEditName = () => {
-    dispatch(setUser({ firstName, lastName }));
-    setIsOpenModal(false);
+  const handleEditName = async () => {
+    try {
+      await updateUser({ firstName, lastName }).unwrap();
+      dispatch(setUser({ firstName, lastName }));
+      setIsOpenModal(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const accountsData = [
