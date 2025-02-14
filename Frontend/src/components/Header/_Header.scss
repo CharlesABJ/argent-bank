@@ -19,6 +19,15 @@
       & {
         gap: $fifteenpx;
       }
+      li {
+        color: #2c3e50;
+        font-weight: $weight-medium;
+        a {
+          svg {
+            margin-right: $fivepx;
+          }
+        }
+      }
     }
   }
 }

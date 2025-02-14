@@ -9,11 +9,12 @@ import { useUpdateUserMutation } from "@/redux/user/userApi";
 
 function User() {
   const dispatch = useDispatch();
-  const { userData } = useSelector((state) => state.user) || {};
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const { userData } = useSelector((state) => state.user) || {};
+
   const [getUser, { isLoading, error }] = useGetUserMutation();
   const [updateUser, { isLoading: isLoadingUpdate, error: errorUpdate }] =
     useUpdateUserMutation();
@@ -30,7 +31,6 @@ function User() {
     getUser()
       .unwrap()
       .then((result) => {
-        console.log("User data received:", result);
         dispatch(setUser(result.body));
       })
       .catch((err) => {
@@ -79,8 +79,8 @@ function User() {
     },
     {
       accountId: 3,
-      name: "Argent Bank Credit Card (x1834)",
-      balance: "$183.12",
+      name: "Argent Bank Credit Card (x8349)",
+      balance: "$184.30",
       balanceDescription: "Current balance",
     },
   ];

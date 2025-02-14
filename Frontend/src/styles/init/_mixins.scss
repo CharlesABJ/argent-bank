@@ -497,7 +497,6 @@
 @mixin classic-h1 {
   @include classic-h1-font-size;
   & {
-    font-family: $font-secondary;
     position: relative;
     font-weight: 700;
     margin-bottom: 10px;
@@ -522,7 +521,6 @@
 @mixin classic-h2 {
   @include classic-h2-font-size;
   & {
-    font-family: $font-secondary;
     position: relative;
     font-weight: $weight-bold;
     line-height: 38px;
@@ -561,11 +559,8 @@
 @mixin classic-h3 {
   @include classic-h3-font-size;
   & {
-    font-family: $font-secondary;
     line-height: 1;
     letter-spacing: 0;
-    padding-bottom: $tenpx;
-    color: var(--couleur-h3);
   }
 }
 
@@ -586,7 +581,6 @@
 @mixin classic-h4 {
   @include classic-h4-font-size;
   & {
-    font-family: $font-secondary;
     line-height: 1;
     letter-spacing: 0;
     padding-bottom: $twelvepx;
@@ -688,7 +682,7 @@
   & {
     font-family: $font-base;
     font-weight: $weight-light;
-    line-height: 20px;
+    line-height: 25px;
     letter-spacing: 0;
     color: var(--couleur-texte);
   }

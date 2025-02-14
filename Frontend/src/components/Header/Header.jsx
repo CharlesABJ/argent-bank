@@ -23,7 +23,7 @@ function Header() {
             <li className="sign-in">
               <NavLink to="/sign-in">
                 <FontAwesomeIcon icon={faUserCircle} />
-                Sign in
+                Sign In
               </NavLink>
             </li>
           ) : (

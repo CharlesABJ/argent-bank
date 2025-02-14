@@ -5,9 +5,14 @@
   text-align: center;
 
   .feature-icon {
-    width: calc($hundredpx + $fiftypx + $twopx);
+    width: 9.5rem;
+    height: 9.5rem;
     padding: $sixteenpx;
     border: 10px solid #00bc77;
     border-radius: 50%;
+  }
+
+  .feature-title {
+    margin-block: 1.7rem 1rem;
   }
 }

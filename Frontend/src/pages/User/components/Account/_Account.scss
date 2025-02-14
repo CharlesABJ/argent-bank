@@ -4,26 +4,54 @@
   width: 80%;
   margin: 0 auto;
   padding: $twenty-fourpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  .account-name {
-  }
-  .container {
+  .infos {
+    display: flex;
+    flex-direction: column;
+    gap: $sixteenpx;
     font-size: $sixteenpx;
     .account-balance {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .balance {
-        font-size: $fourtypx;
-        font-weight: $weight-bold;
-      }
-      .view-transactions {
-        background: $color3;
-        color: $color6;
-        padding: $tenpx;
+      font-size: $fourtypx;
+      font-weight: $weight-bold;
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    .view-transactions {
+      height: max-content;
+      background: $color3;
+      font-weight: $weight-semibold;
+      color: $color6;
+      font-size: 1.1rem;
+      padding: $sevenpx $twenty-fourpx;
+      border: 2px solid $color3;
+      border-left: none;
+      border-top: none;
+      border-style: outset;
+      user-select: none;
+      cursor: pointer;
+      &:active {
+        border-style: inset;
       }
     }
-    .balance-description {
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Account {
+    flex-direction: column;
+    align-items: start;
+    gap: $sixteenpx;
+    .actions {
+      width: 100%;
+      .view-transactions {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 }

@@ -11,16 +11,25 @@
   }
   h2 {
     text-align: center;
+    font-weight: $weight-bold;
+    margin-block: 2rem 1.2rem;
+    color: #2c3e50;
   }
   label {
     display: flex;
     flex-direction: column;
     margin-bottom: $sixteenpx;
     font-weight: $weight-bold;
+    color: #2c3e50;
+    cursor: pointer;
     input {
       padding: 5px;
       font-size: 1.2rem;
       color: $color5;
+      &:focus {
+        outline: none;
+        border-color: #2c3e50;
+      }
     }
     &.remember {
       width: max-content;
@@ -29,6 +38,10 @@
       gap: $sevenpx;
       font-weight: unset;
       cursor: pointer;
+      input {
+        accent-color: #2c3e50;
+        cursor: pointer;
+      }
     }
   }
   button {
@@ -36,11 +49,15 @@
     width: 100%;
     padding: 8px;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: $weight-medium;
     margin-top: 1rem;
     border-color: $color3;
     background-color: $color3;
     color: #fff;
     text-decoration: underline;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

@@ -9,7 +9,7 @@ function Hero({ dataHero }) {
       <div className="hero-content">
         <h2 className="hero-title">
           {dataHero.title?.map((title, index) => (
-            <span key={index}>{title}</span>
+            <p key={index}>{title}</p>
           ))}
         </h2>
         <p className="hero-description">{dataHero.description}</p>

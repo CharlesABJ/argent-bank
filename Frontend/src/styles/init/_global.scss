@@ -8,6 +8,7 @@
 body {
   @include classic-body;
 }
-.error {
-  color: red;
+
+h3 {
+  @include classic-h3;
 }
